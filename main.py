@@ -47,10 +47,23 @@ centenas = {
 }
 
 def entero_a_romano(num):
-    return "MCMXCIV"
+    lista = []
+    num = str(num)
+    if len(num) <4:
+        num = "{:0>4s}".format(num)
+
+    lista = list(num)
+    for i in range(len(lista)):
+        lista[i] = lista[i]+"0"*((len(lista)-1)-i)
+
+    return lista
+
+print("Funcion en acción", entero_a_romano(336))
+
 
 for c,v in diccionario.items():
     print(c + "-" + str(v))
+
 
 '''
 M → 1000
