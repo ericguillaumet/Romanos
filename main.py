@@ -30,7 +30,27 @@ dic_entero_a_romano = {
     700: "DCC", 800: "DCCC", 900: "CM",
 
     1000:'M',2000:'MM',3000:'MMM'
+
 }
+
+dic_romano_a_entero = {
+    "I": 1, "V": 5, "X": 10, "C": 100, "D": 500, "M": 1000    
+
+}
+
+def romano_a_entero(rom:str)->int: #MDCCXVIII
+    
+    lista = list(rom)
+    print(lista)
+
+    valor_entero = 0
+
+    for i in rom:  
+         valor_entero += dic_romano_a_entero.get(i)
+
+    return valor_entero
+
+print("Romano a entero: ", romano_a_entero('MDCCXIII'))
 
 num = "{:0>4s}".format('336')
 
@@ -50,4 +70,5 @@ def entero_a_romano(num:int)->str:
     
     return numero_romano
       
-print("Funcion en acción", entero_a_romano(2022))
+#print("Funcion en acción", entero_a_romano(2022))
+

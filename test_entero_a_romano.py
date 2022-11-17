@@ -1,4 +1,4 @@
-from main import entero_a_romano
+from main import entero_a_romano, romano_a_entero
 '''
 def test_entero_a_romano():
     assert entero_a_romano(336) == ['0000', '300', '30', '6']
@@ -8,3 +8,9 @@ def test_336():
 
 def test_2022():
     assert entero_a_romano(2022) == "MMXXII"
+
+def test_I():
+    assert romano_a_entero("I") == 1
+
+def test_1713():
+    assert romano_a_entero("MDCCXIII") == 1713
