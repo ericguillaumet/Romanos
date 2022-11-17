@@ -69,7 +69,7 @@ def entero_a_romano(num):
              
     return numero_romano
 
-print("Funcion en acción", entero_a_romano(336))
+print("Funcion en acción", entero_a_romano(1998))
 
 for c,v in unidades.items():
     print(str(c) + " - " + str(v))
