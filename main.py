@@ -27,7 +27,9 @@ dic_entero_a_romano = {
 
     100: "C", 200: "CC", 300: "CCC",
     400: "CD", 500: "D", 600: "DC",
-    700: "DCC", 800: "DCCC", 900: "CM"
+    700: "DCC", 800: "DCCC", 900: "CM",
+
+    1000:'M',2000:'MM',3000:'MMM'
 }
 
 num = "{:0>4s}".format('336')
@@ -48,4 +50,4 @@ def entero_a_romano(num:int)->str:
     
     return numero_romano
       
-print("Funcion en acción", entero_a_romano(336))
+print("Funcion en acción", entero_a_romano(2022))
