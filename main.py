@@ -41,16 +41,33 @@ centenas = {
 print("diccionario unidades ", unidades.get("I"))
 
 def entero_a_romano(num):
+    
     lista = []
     num = str(num)
+     
     if len(num) <4:
         num = "{:0>4s}".format(num)
 
     lista = list(num)
     for i in range(len(lista)):
         lista[i] = lista[i] + "0" * ((len(lista)-1)-i)
+    
+    numero_romano = ""
 
-    return lista
+    for i in range(len(lista)):
+        print(lista[i])
+
+        if i == 0:
+            if milesimas.get(int(lista[i])) != None:
+                numero_romano += milesimas.get(int(lista[i]))
+        elif i == 1:
+            numero_romano += centenas.get(int(lista[i]))
+        elif i == 2:
+            numero_romano += decenas.get(int(lista[i]))
+        elif i == 3:
+            numero_romano += unidades.get(int(lista[i]))
+             
+    return numero_romano
 
 print("Funcion en acción", entero_a_romano(336))
 
