@@ -30,11 +30,11 @@ class NumeroRomano():
     def __init__(self,valor):
 
         if isinstance(valor,str):
-            self.representacion = valor
-            self.valor = self.romano_a_entero(valor)
+            self.representacion = valor#expresiones o simbolo romanos
+            self.valor = self.romano_a_entero(valor)#valores en numeros y llama a la funcion romano a entero
         elif isinstance(valor,int):
-            self.valor = valor
-            self.representacion = self.entero_a_romano(valor)
+            self.valor = valor#valor en numero
+            self.representacion = self.entero_a_romano(valor)#valor o simbolo romano llama a la funcion entero a romano
         else:
             raise RomanNumberError("El valor debe ser cadena o entero")
 
@@ -96,29 +96,20 @@ class NumeroRomano():
 
 
     def __repr__(self):
-        return self.representacion 
+        return self.representacion
 
     def __add__(self,otro):
         if isinstance(otro,NumeroRomano):
-            return NumeroRomano(self.valor+otro.valor)#recoge el valor del otro objeto
+            return NumeroRomano(self.valor+otro.valor)#recoge el valor del otro objeto en int
         elif isinstance(otro,int):
-            return NumeroRomano(self.valor+otro)#recibe el valor del otro objeto    
+            return NumeroRomano(self.valor+otro)#recibe el valor del otro objeto 
+        elif isinstance(otro,float):
+            return NumeroRomano(self.valor+int(otro))
 
-
-
-r_a_e=NumeroRomano(False)
-print("representacion",r_a_e.representacion)
-print("valor: ",r_a_e.valor)
-
-
-e_a_r=NumeroRomano(True)
-print("representacion",e_a_r.representacion)
-print("valor: ",e_a_r.valor)
-
-
-"""
-rp = NumeroRomano("CCCXXXIV")
-print("solo el objeto",rp)
-print("valor:",rp.valor)
-print("representacion:",rp.representacion)
-"""
+    def __sub__(self,otro):
+        if isinstance(otro,NumeroRomano):
+            return NumeroRomano(self.valor-otro.valor)#recoge el valor del otro objeto en int
+        elif isinstance(otro,int):
+            return NumeroRomano(self.valor-otro)#recibe el valor del otro objeto 
+        elif isinstance(otro,float):
+            return NumeroRomano(self.valor-int(otro))
